@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.comment-field-main {
+  width: 550px;
+}
+
+.inputs-wrap {
+  width: 550px;
+}
+.container-text-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  border: 0.3rem solid red;
+}
