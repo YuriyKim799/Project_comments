@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Вывод каждую секунду
+    // Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
+    // Сделайте два варианта решения.
+    // Используя setInterval.
+    // Используя рекурсивный setTimeout.
+
+    // function printNumbers(from, to) {
+    //   let current = from;
+
+    //   let timerId = setInterval(function () {
+    //     alert(current);
+    //     if (current == to) {
+    //       clearInterval(timerId);
+    //     }
+    //     current++;
+    //   }, 1000);
+    // }
+
+    // console.log(printNumbers(2, 7));
+
+    function printNumbers(from, to) {
+      let current = from;
+
+      let timerId = setTimeout(function recursTime() {
+        alert(current);
+        if (current == to) {
+          clearInterval(timerId);
+        } else if (current < to) {
+          setTimeout(recursTime, 1000)
+        }
+        current++
+      }, 1000)
+    }
+    console.log(printNumbers(2, 7));
+
+  </script>
+</body>
+
+</html>

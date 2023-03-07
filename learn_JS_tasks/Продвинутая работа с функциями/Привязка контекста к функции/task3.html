@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Свойство функции после bind
+    // В свойство функции записано значение.Изменится ли оно после применения bind ? Обоснуйте ответ.
+
+    function sayHi() {
+      alert(this.name);
+    }
+    sayHi.test = 5;
+
+    let bound = sayHi.bind({
+      name: "Вася"
+    });
+
+    alert(bound.test); // что выведет? почему? UNDEFINED потому что у bind другая привязка и у bound теперь нет свойства test 
+
+  </script>
+</body>
+
+</html>

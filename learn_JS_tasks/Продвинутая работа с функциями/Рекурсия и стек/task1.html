@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Вычислить сумму чисел до данного
+    // Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+    //       Например:
+    //     sumTo(1) = 1
+    //     sumTo(2) = 2 + 1 = 3
+    //     sumTo(3) = 3 + 2 + 1 = 6
+    //     sumTo(4) = 4 + 3 + 2 + 1 = 10
+    // ...
+    //     sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+    // Сделайте три варианта решения:
+    // С использованием цикла.
+    // Через рекурсию, т.к.sumTo(n) = n + sumTo(n - 1) for n > 1.
+    // С использованием формулы арифметической прогрессии.
+    // Пример работы вашей функции:
+    // P.S.Какой вариант решения самый быстрый ? Самый медленный ? Почему ?
+    //   P.P.S.Можно ли при помощи рекурсии посчитать sumTo(100000) ?
+
+    function sumTo(n) {
+      let result = 0;
+      for (let i = 0; i <= n; i++) {
+        result += i;
+      }
+      return result;
+    }
+    alert(sumTo(10));
+
+    function sumTo(n) {
+      if (n == 1) {
+        return n;
+      } else {
+        return n + sumTo(n - 1)
+      }
+    }
+    alert(sumTo(10));
+
+    function sumTo(n) {
+      return n = ((1 + n) * n) / 2
+    }
+    alert(sumTo(10));
+
+
+
+  </script>
+</body>
+
+</html>

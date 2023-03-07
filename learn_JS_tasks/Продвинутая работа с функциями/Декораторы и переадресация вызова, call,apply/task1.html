@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Декоратор - шпион
+    // Создайте декоратор spy(func), который должен возвращать обёртку, которая сохраняет все вызовы функции в своём свойстве calls.
+    // Каждый вызов должен сохраняться как массив аргументов.
+
+    function work(a, b) {
+      alert(a + b); // произвольная функция или метод
+    }
+
+    function spy(foo) {
+
+      function insider(...args) {
+        insider.calls.push(args);
+        return foo.apply(this, args);
+      }
+
+      insider.calls = [];
+
+      return insider;
+    }
+
+    work = spy(work);
+
+    work(1, 2); // 3
+    work(4, 5); // 9
+
+    for (let args of work.calls) {
+      alert('call:' + args.join()); // "call:1,2", "call:4,5"
+    }
+  </script>
+</body>
+
+</html>

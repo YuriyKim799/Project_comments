@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Куда будет произведена запись ?
+    // Объект rabbit наследует от объекта animal.
+    // Какой объект получит свойство full при вызове rabbit.eat(): animal или rabbit ?  
+    
+    // ОТВЕТ rabbit 
+    // Если мы вызываем obj.method(), а метод при этом взят из прототипа, то this всё равно ссылается на obj. Таким образом, методы всегда работают с текущим объектом, даже если они наследуются.
+    
+    let animal = {
+      eat() {
+        this.full = true;
+      }
+    };
+
+    let rabbit = {
+      __proto__: animal
+    };
+
+    rabbit.eat();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Вывод односвязного списка в обратном порядке
+    // Выведите односвязный список из предыдущего задания Вывод односвязного списка в обратном порядке.
+    // Сделайте два решения: с использованием цикла и через рекурсию.
+
+    let list = {
+      value: 1,
+      next: {
+        value: 2,
+        next: {
+          value: 3,
+          next: {
+            value: 4,
+            next: null
+          }
+        }
+      }
+    };
+
+    function printList(list) {
+      let array = []
+      while (list) {
+        array.push(list.value);
+        list = list.next;
+      }
+
+      for (let i = array.length - 1; i >= 0; i--) {
+        alert(array[i])
+      }
+    }
+
+    printList(list);
+
+    function printList(list) {
+      if (list.next) {
+        printList(list.next);
+      }
+
+      alert(list.value);
+    }
+
+    printList(list);
+  </script>
+</body>
+
+</html>

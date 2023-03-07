@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Добавить функциям метод "f.defer(ms)"
+    // Добавьте всем функциям в прототип метод defer(ms), который вызывает функции через ms миллисекунд.
+    // После этого должен работать такой код:
+
+    function f() {
+      alert("Hello!");
+    }
+
+    Function.prototype.defer = function (ms) {
+      setTimeout(this, ms)
+    }
+
+    f.defer(1000); // выведет "Hello!" через 1 секунду
+  </script>
+</body>
+
+</html>

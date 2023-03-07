@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+// Изменяем "prototype"
+// В коде ниже мы создаём нового кролика new Rabbit, а потом пытаемся изменить его прототип.
+// Сначала у нас есть такой код:
+
+// function Rabbit() {}
+// Rabbit.prototype = {
+//   eats: true
+// };
+
+// let rabbit = new Rabbit();
+
+// alert( rabbit.eats ); // true
+
+// Добавим одну строчку (выделенную в коде ниже). Что вызов alert покажет нам сейчас?
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit1 = new Rabbit();
+
+Rabbit.prototype = {};
+
+alert( rabbit1.eats ); // ? TRUE     После создания F.prototype может измениться, и новые объекты, созданные с помощью new F(), будут иметь другой объект в качестве [[Prototype]], но уже существующие объекты сохранят старый.
+
+
+// …А если код такой (заменили одну строчку)?
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit2 = new Rabbit();
+
+Rabbit.prototype.eats = false;
+
+alert( rabbit2.eats ); // ? FALSE
+
+
+// Или такой (заменили одну строчку)?
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit3 = new Rabbit();
+
+delete rabbit3.eats;
+
+alert( rabbit.eats ); // ? TRUE
+
+// Или, наконец, такой:
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit4 = new Rabbit();
+
+delete Rabbit.prototype.eats;
+
+alert( rabbit.eats4 ); // ?   UNDEFINED
+  </script>
+</body>
+
+</html>
