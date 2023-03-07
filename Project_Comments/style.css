@@ -18,6 +18,7 @@ h1 {
 .inputs-wrap {
   width: 550px;
 }
+
 .container-text-inputs {
   display: flex;
   justify-content: space-between;
@@ -25,4 +26,46 @@ h1 {
 
 .error {
   border: 0.3rem solid red;
+}
+
+.heart-like {
+  color: red;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.comment-field-main {
+  margin-top: 33px;
+}
+
+.comment-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.comments-text {
+  padding: 15px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.fa-solid {
+  font-size: 30px;
+  cursor: pointer;
+}
+.small-text {
+  font-size: 18px;
+  font-weight: 600;
 }
